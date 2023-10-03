@@ -1,0 +1,61 @@
+{
+	"name": "DelimitedText31",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"FileName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@concat(dataset().FileName,'.csv')\n",
+					"type": "Expression"
+				},
+				"folderPath": "output",
+				"container": "learningtrial2024"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "data begDate",
+				"type": "String"
+			},
+			{
+				"name": "Region_ID",
+				"type": "String"
+			},
+			{
+				"name": "Indicator_Id",
+				"type": "String"
+			},
+			{
+				"name": "Events",
+				"type": "String"
+			},
+			{
+				"name": "Value",
+				"type": "String"
+			},
+			{
+				"name": "Units",
+				"type": "String"
+			},
+			{
+				"name": "Frequency",
+				"type": "String"
+			}
+		]
+	}
+}

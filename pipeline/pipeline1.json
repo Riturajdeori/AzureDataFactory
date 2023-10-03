@@ -72,13 +72,13 @@
 										},
 										"inputs": [
 											{
-												"referenceName": "DelimitedText1",
+												"referenceName": "DelimitedText11",
 												"type": "DatasetReference"
 											}
 										],
 										"outputs": [
 											{
-												"referenceName": "DelimitedText3",
+												"referenceName": "DelimitedText31",
 												"type": "DatasetReference",
 												"parameters": {
 													"FileName": {
@@ -138,13 +138,13 @@
 										},
 										"inputs": [
 											{
-												"referenceName": "DelimitedText1",
+												"referenceName": "DelimitedText11",
 												"type": "DatasetReference"
 											}
 										],
 										"outputs": [
 											{
-												"referenceName": "DelimitedText3",
+												"referenceName": "DelimitedText31",
 												"type": "DatasetReference",
 												"parameters": {
 													"FileName": {
@@ -169,7 +169,7 @@
 										"userProperties": [],
 										"typeProperties": {
 											"dataflow": {
-												"referenceName": "dataflow1",
+												"referenceName": "dataflow11",
 												"type": "DataFlowReference",
 												"datasetParameters": {
 													"source2": {
@@ -220,6 +220,5 @@
 		},
 		"annotations": [],
 		"lastPublishTime": "2023-10-02T08:30:43Z"
-	},
-	"type": "Microsoft.DataFactory/factories/pipelines"
+	}
 }
