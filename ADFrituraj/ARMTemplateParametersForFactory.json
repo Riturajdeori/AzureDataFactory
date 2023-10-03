@@ -10,6 +10,9 @@
 		},
 		"HttpServer1_properties_typeProperties_url": {
 			"value": "https://reqres.in/api/users?page=2"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"value": "https://reqres.in/api/users"
 		}
 	}
 }
