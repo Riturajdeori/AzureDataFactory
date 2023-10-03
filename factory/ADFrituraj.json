@@ -1,0 +1,9 @@
+{
+	"name": "ADFrituraj",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "53994c53-e5b1-4013-b3b8-188e645092c4",
+		"tenantId": "c9ed46b3-a9a5-4ddc-9614-1999e3a5bbe7"
+	}
+}
