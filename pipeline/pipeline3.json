@@ -124,7 +124,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"queryparameter": {
-											"value": "@?page=item()",
+											"value": "?page=@{item()}",
 											"type": "Expression"
 										}
 									}
