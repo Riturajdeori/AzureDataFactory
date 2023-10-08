@@ -12,7 +12,11 @@
 					"name": "emptable"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "MapDrifted1",
@@ -38,7 +42,14 @@
 				"          manager_id = toShort(byName('manager_id'))) ~> MapDrifted1",
 				"MapDrifted1 filter(salary > 12000) ~> filter1",
 				"filter1 aggregate(groupBy(department_id),",
-				"     salary = avg(salary)) ~> aggregate1"
+				"     salary = avg(salary)) ~> aggregate1",
+				"aggregate1 sink(validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     store: 'cache',",
+				"     format: 'inline',",
+				"     output: false,",
+				"     saveOrder: 1) ~> sink1"
 			]
 		}
 	}
