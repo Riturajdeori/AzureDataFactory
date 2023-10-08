@@ -11,6 +11,9 @@
 		"AzureSqlDatabase1_connectionString": {
 			"value": ""
 		},
+		"MySql1_connectionString": {
+			"value": ""
+		},
 		"HttpServer1_properties_typeProperties_url": {
 			"value": "https://reqres.in/api/users?page=2"
 		},
