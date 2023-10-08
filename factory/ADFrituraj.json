@@ -1,5 +1,13 @@
 {
 	"name": "ADFrituraj",
+	"properties": {
+		"globalParameters": {
+			"RootGlb": {
+				"type": "string",
+				"value": "learningtrial2024/output"
+			}
+		}
+	},
 	"location": "eastus",
 	"identity": {
 		"type": "SystemAssigned",
