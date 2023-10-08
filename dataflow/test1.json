@@ -14,6 +14,10 @@
 			],
 			"sinks": [
 				{
+					"dataset": {
+						"referenceName": "outdataset",
+						"type": "DatasetReference"
+					},
 					"name": "sink1"
 				}
 			],
@@ -43,13 +47,20 @@
 				"MapDrifted1 filter(salary > 12000) ~> filter1",
 				"filter1 aggregate(groupBy(department_id),",
 				"     salary = avg(salary)) ~> aggregate1",
-				"aggregate1 sink(validateSchema: false,",
+				"aggregate1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          emp_id as string,",
+				"          emp_name as string,",
+				"          department_id as string,",
+				"          salary as string,",
+				"          manager_id as string",
+				"     ),",
+				"     partitionFileNames:['data1.csv'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     store: 'cache',",
-				"     format: 'inline',",
-				"     output: false,",
-				"     saveOrder: 1) ~> sink1"
+				"     saveOrder: 1,",
+				"     partitionBy('hash', 1)) ~> sink1"
 			]
 		}
 	}
