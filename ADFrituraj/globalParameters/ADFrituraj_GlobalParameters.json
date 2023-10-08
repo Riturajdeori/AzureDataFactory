@@ -1,1 +1,6 @@
-{}
+{
+	"RootGlb": {
+		"type": "string",
+		"value": "learningtrial2024/output"
+	}
+}
