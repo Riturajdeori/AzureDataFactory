@@ -61,12 +61,21 @@
 							"Root": {
 								"value": "@pipeline().globalParameters.RootGlb",
 								"type": "Expression"
+							},
+							"FileName": {
+								"value": "@pipeline().parameters.Filename",
+								"type": "Expression"
 							}
 						}
 					}
 				]
 			}
 		],
+		"parameters": {
+			"Filename": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
