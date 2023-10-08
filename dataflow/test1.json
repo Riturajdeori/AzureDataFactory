@@ -9,20 +9,28 @@
 						"referenceName": "employee",
 						"type": "DatasetReference"
 					},
-					"name": "source1"
+					"name": "emptable"
 				}
 			],
-			"sinks": [],
-			"transformations": [
+			"sinks": [
 				{
-					"name": "filter1"
+					"name": "sink1"
 				}
 			],
+			"transformations": [],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 filter(greater(salary,10000)) ~> filter1"
+				"     inferDriftedColumnTypes: true,",
+				"     limit: 100,",
+				"     ignoreNoFilesFound: false) ~> emptable",
+				"emptable sink(validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     store: 'cache',",
+				"     format: 'inline',",
+				"     output: false,",
+				"     saveOrder: 1) ~> sink1"
 			]
 		}
 	}
