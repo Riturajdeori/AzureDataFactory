@@ -17,14 +17,28 @@
 					"name": "sink1"
 				}
 			],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "MapDrifted1",
+					"description": "Creates an explicit mapping for each drifted column"
+				},
+				{
+					"name": "filter1"
+				}
+			],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     inferDriftedColumnTypes: true,",
 				"     limit: 100,",
 				"     ignoreNoFilesFound: false) ~> emptable",
-				"emptable sink(validateSchema: false,",
+				"emptable derive(emp_id = toShort(byName('emp_id')),",
+				"          emp_name = toString(byName('emp_name')),",
+				"          department_id = toShort(byName('department_id')),",
+				"          salary = toShort(byName('salary')),",
+				"          manager_id = toShort(byName('manager_id'))) ~> MapDrifted1",
+				"MapDrifted1 filter(salary > 10000) ~> filter1",
+				"filter1 sink(validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     store: 'cache',",
