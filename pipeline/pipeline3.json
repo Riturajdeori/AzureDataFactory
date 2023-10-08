@@ -118,18 +118,6 @@
 									]
 								}
 							},
-							"inputs": [
-								{
-									"referenceName": "RestResource1",
-									"type": "DatasetReference",
-									"parameters": {
-										"queryparameter": {
-											"value": "?page=@{item()}",
-											"type": "Expression"
-										}
-									}
-								}
-							],
 							"outputs": [
 								{
 									"referenceName": "DelimitedText3",
